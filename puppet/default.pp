@@ -10,7 +10,7 @@ package { 'libsqlite3-dev'    : ensure => present, require  => Exec['apt-get upd
 package { 'bundler'           : ensure => present, provider => 'gem', require => Package['ruby1.9.3'] }
 
 # Install Git and AppFog tooling
-package { 'git': ensure => present }
+package { 'git': ensure => present, require  => Exec['apt-get update'] }
 package { 'af' : ensure => present, provider => 'gem', require => Package['ruby1.9.3'] }
 
 # Allow gem to run as normal user
