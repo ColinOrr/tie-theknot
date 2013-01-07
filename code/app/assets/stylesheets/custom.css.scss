@@ -40,18 +40,9 @@ footer {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-
-  body {
-    padding: 0;
-  }
-
-  .home-page header { 
-    height: auto;
-  }
-
-  #gallery {
-    margin-top: 0;
-  }
+  body              { padding: 0;    }
+  .home-page header { height: auto;  }
+  #gallery          { margin-top: 0; }
 }
 
 /*
@@ -72,6 +63,16 @@ $gray: #999;
   background: linear-gradient(45deg, $from 0%,$to 100%); /* W3C */
 }
 
+@mixin overlay() {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 body {
   background: $cream;
 }
@@ -83,13 +84,7 @@ header {
 }
 
 header::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  @include overlay();
   background: url(../pattern.png) repeat center center;
   opacity: .4;
 }
@@ -130,4 +125,9 @@ footer {
   line-height: 20pt;
   font-weight: 300;
   text-transform: uppercase;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .actor { font-size: 20pt; }
 }
