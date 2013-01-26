@@ -1,0 +1,133 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import url(http://fonts.googleapis.com/css?family=BenchNine:300,400,700);
+
+/*
+ * Layout */
+
+.home-page {  
+  text-align: center;
+}
+
+.home-page header {
+  height: 350px;
+}
+
+.content {  
+  max-width: 980px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+}
+
+#gallery {
+  padding: 0;
+  margin: -260px auto 20px auto;
+  max-width: 650px;
+}
+
+.carousel-control {
+  top: 50%;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  body              { padding: 0;    }
+  .home-page header { height: auto;  }
+  #gallery          { margin-top: 0; }
+}
+
+/*
+ * Colours */
+
+$dark-purple: #020031;
+$light-purple: #6d3353;
+$cream: #fbf1d9;
+$gray: #999;
+
+@mixin gradient($from, $to) {
+  background: $from; /* Old browsers */
+  background: -moz-linear-gradient(45deg, $from 0%, $to 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg, $from 0%,$to 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg, $from 0%,$to 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg, $from 0%,$to 100%); /* IE10+ */
+  background: linear-gradient(45deg, $from 0%,$to 100%); /* W3C */
+}
+
+@mixin overlay() {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body {
+  background: $cream;
+}
+
+header {
+  color: $cream;
+  box-shadow: 0 5px 30px #888;
+  @include gradient($dark-purple, $light-purple);
+}
+
+header::after {
+  @include overlay();
+  background: url(../pattern.png) repeat center center;
+  opacity: .4;
+}
+
+#gallery {
+  border: 4px solid $cream;
+  box-shadow: 0 0 3px #000;
+}
+
+footer {
+  color: $gray;
+}
+
+/*
+ * Typography */
+
+.actor {
+  font-family: 'BenchNine', sans-serif; 
+  font-size: 30pt;
+  line-height: 30pt;
+  font-variant: small-caps;
+}
+
+.premieres {
+  font-family: 'BenchNine', sans-serif; 
+  font-weight: 700; 
+  font-size: 30pt;
+  text-transform: uppercase;
+}
+
+.premieres sup {
+  text-transform: none;
+}
+
+.home-page footer {
+  font-family: 'BenchNine', sans-serif; 
+  font-size: 20pt;
+  line-height: 20pt;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .actor { font-size: 20pt; }
+}

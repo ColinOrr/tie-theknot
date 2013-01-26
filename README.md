@@ -20,6 +20,7 @@ Install [Git][1] and [Vagrant][2] on your machine, then run the following comman
     # Launch the web site
     vagrant ssh
     cd /vagrant/code
+    bundle install
     bundle exec rails s
 
 All being well, you can now visit the site from your browser http://localhost:3000
