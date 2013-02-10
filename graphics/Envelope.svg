@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3867"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Envelope.svg">
+  <defs
+     id="defs3869">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect3762"
+       is_visible="true"
+       pattern="M 0,5 10,10 10,0 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="279.44723"
+     inkscape:cy="208.30851"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="0,1"
+       position="393.85045,347.24889"
+       id="guide2986" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="429.55357,694.55357"
+       id="guide2990" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="260.61935,176.27162"
+       id="guide3754" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3872">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#520463;fill-opacity:1;stroke:none;font-family:ChopinScript;-inkscape-font-specification:ChopinScript Medium"
+       x="118.68527"
+       y="870.25128"
+       id="text2982"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2984"
+         x="118.68527"
+         y="870.25128">Tickets</tspan></text>
+    <path
+       style="fill:#5f0075;fill-opacity:1;stroke:none"
+       d="m 151.18654,880.5557 73.36094,-1.13642 0,2.5 -73.36094,-1.07329 z"
+       id="rect3766"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path3771"
+       d="m 301.78354,880.5557 -73.36094,-1.13642 0,2.5 73.36094,-1.07329 z"
+       style="fill:#5f0075;fill-opacity:1;stroke:none" />
+  </g>
+</svg>
