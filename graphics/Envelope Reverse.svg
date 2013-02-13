@@ -14,7 +14,7 @@
    id="svg3867"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="Envelope.svg">
+   sodipodi:docname="Envelope Reverse.svg">
   <defs
      id="defs3869">
     <inkscape:path-effect
@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="216.9012"
-     inkscape:cy="200.78728"
+     inkscape:zoom="0.5"
+     inkscape:cx="902.74199"
+     inkscape:cy="846.46866"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -58,8 +58,12 @@
        id="guide2986" />
     <sodipodi:guide
        orientation="0,1"
-       position="429.55357,694.55357"
-       id="guide2990" />
+       position="490,214.28571"
+       id="guide2996" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="278.25,699"
+       id="guide2994" />
   </sodipodi:namedview>
   <metadata
      id="metadata3872">
@@ -77,31 +81,28 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <text
-       xml:space="preserve"
-       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#520463;fill-opacity:1;stroke:none;font-family:ChopinScript;-inkscape-font-specification:ChopinScript Medium"
-       x="118.68527"
-       y="870.25128"
-       id="text2982"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2984"
-         x="118.68527"
-         y="870.25128">Tickets</tspan></text>
-    <g
-       id="g2990">
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="rect3766"
-         d="m 147.18654,882.5557 73.36094,-1.13642 0,2.5 -73.36094,-1.07329 z"
-         style="fill:#5f0075;fill-opacity:1;stroke:none" />
-      <path
-         style="fill:#5f0075;fill-opacity:1;stroke:none"
-         d="m 303.78354,882.5557 -73.36094,-1.13642 0,2.5 73.36094,-1.07329 z"
-         id="path3771"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
-    </g>
+    <path
+       style="fill:#808080;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 62.940563,705.11329 618.213357,0"
+       id="path2990"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2992"
+       d="m 62.940563,353.36218 618.213357,0"
+       style="fill:#b3b3b3;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2998"
+       d="m 62.940562,838.07647 618.213358,0"
+       style="fill:#808080;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#666666;stroke-width:0.88582676999999999;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3000"
+       width="283.46457"
+       height="77.952759"
+       x="384.55676"
+       y="-336.41705"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
   </g>
 </svg>
