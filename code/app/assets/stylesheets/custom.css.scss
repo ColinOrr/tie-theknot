@@ -5,12 +5,8 @@
 /*
  * Layout */
 
-.home-page {  
-  text-align: center;
-}
-
-.home-page header, .home-page header::after {
-  height: 350px;
+header {
+  position: relative;
 }
 
 .content {  
@@ -22,6 +18,7 @@
 .logo {
   position: relative;
   z-index: 2;
+  height: 75px;
 }
 
 #gallery {
@@ -36,6 +33,22 @@
 
 footer {
   margin-top: 50px;
+}
+
+.home-page {  
+  text-align: center;
+}
+
+.home-page header {
+  height: 350px;
+}
+
+.home-page .logo {
+  height: 106px;  
+}
+
+.actions {
+  text-align: right !important;
 }
 
 /* Landscape phone to portrait tablet */
@@ -70,6 +83,7 @@ $gray: #999;
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
 }
 
 body {
@@ -82,7 +96,7 @@ header {
   @include gradient($dark-purple, $light-purple);
 }
 
-header::after {
+header:after {
   @include overlay();
   background: url(../pattern.png) repeat center center;
   opacity: .4;
@@ -99,6 +113,10 @@ footer {
 
 /*
  * Typography */
+
+ h1 {
+  font-size: 26px;
+ }
 
 .actor {
   font-family: 'BenchNine', sans-serif; 
