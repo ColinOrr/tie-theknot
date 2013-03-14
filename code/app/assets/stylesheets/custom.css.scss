@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.home-page header {
+.home-page header, .home-page header::after {
   height: 350px;
 }
 
@@ -69,7 +69,6 @@ $gray: #999;
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
 }
 
