@@ -53,9 +53,9 @@ footer {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  body              { padding: 0;    }
-  .home-page header { height: auto;  }
-  #gallery          { margin-top: 0; }
+  header            { margin: 0 -20px; }
+  .home-page header { height: auto; }
+  #gallery          { margin: 0 -20px 20px -20px; }
 }
 
 /*
