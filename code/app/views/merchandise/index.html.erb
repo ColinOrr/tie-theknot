@@ -1,0 +1,85 @@
+<script src="http://twitter.github.com/bootstrap/assets/js/holder/holder.js"></script>
+
+<h1 class="stamp">Merchandise</h1>
+<div class="row">
+  <div class="span9">
+
+    <!-- Introduction -->
+    <p class="lead">the trip of a lifetime...</p>
+    <p>
+      ...if you know us well, then you'll know that we would rather spend money on travel than stuff 
+      for the house, as we already have everything we need. 
+    </p>
+    <p>
+      If you are thinking of getting us a gift, we'd much prefer you help us make our honeymoon a trip 
+      of a lifetime.  We're planning a trip to Australia with a couple of stops in Asia on the way.  This
+      section of the site has a gift list of activities, air miles and dining out vouchers that you can 
+      buy for us online.
+    </p>
+    <p>
+      The main thing is that you come along on our special day to celebrate with us.  We look forward to
+      seeing you!
+    </p>
+    <p class="text-right">
+      <br />
+      Colin and Natalie
+    </p>
+
+    <!-- Activities -->
+    <h2>Activities</h2>
+    <ul class="thumbnails">
+    <% @products.select{|p| p.category == 'Activities'}.each do |product| %>
+      <li class="span3">
+        <div class="thumbnail">
+          <img data-src="holder.js/260x180" alt="">
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <div class="actions">
+            <a href="#" class="btn btn-success">
+              <%= number_to_currency(product.price, :unit => "£") %>
+            </a>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+
+  </div>
+  <div class="span3">
+    <div class="well">
+
+      <!-- Air Miles -->
+      <h2>Air Miles</h2>
+      <img data-src="holder.js/230x100" alt="">
+      <table class="table">
+      <% @products.select{|p| p.category == 'Air Miles'}.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td class="actions">
+            <a href="#" class="btn btn-mini btn-success">
+              <%= number_to_currency(product.price, :unit => "£") %>
+             </a>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+
+      <!-- Dining Out -->
+      <h2>Dining Out</h2>
+      <img data-src="holder.js/230x100" alt="">
+      <table class="table">
+      <% @products.select{|p| p.category == 'Dining Out'}.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td class="actions">
+            <a href="#" class="btn btn-mini btn-success">
+              <%= number_to_currency(product.price, :unit => "£") %>
+             </a>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>

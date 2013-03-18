@@ -30,7 +30,7 @@
   -webkit-transform: rotate($angle);
   -o-transform: rotate($angle);
   -ms-transform: rotate($angle);
-
+  
   -webkit-backface-visibility: hidden;
 }
 
@@ -88,7 +88,8 @@ footer {
   display: block;
   position: relative;
   top: -45px;
-  width: 150px;
+  margin-bottom: -25px;
+  width: 200px;
   text-align: center;  
   padding: 10px;
   border-radius: 5px;
@@ -146,10 +147,21 @@ footer {
 /*
  * Typography */
 
- h1 {
+h1, h2, h3 {
   font-family: 'BenchNine', sans-serif; 
+}
+
+h1 {
   font-size: 30pt;
- }
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  line-height: 1em;
+}
 
 .actor {
   font-family: 'BenchNine', sans-serif; 
@@ -180,4 +192,10 @@ footer {
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .actor { font-size: 20pt; }
+}
+
+/*
+ * Utilities */
+.text-right {
+  text-align: right;
 }

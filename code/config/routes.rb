@@ -1,4 +1,7 @@
 Myapp::Application.routes.draw do
+
+  get "merchandise" => "merchandise#index"
+
   resources :products
 
   get "home/index"
