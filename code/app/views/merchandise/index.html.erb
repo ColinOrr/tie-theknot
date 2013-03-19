@@ -38,9 +38,7 @@
             <a href="#description<%= product.id %>" class="btn" data-toggle="collapse">
               Details
             </a>
-            <a href="#" class="btn btn-success">
-              <%= number_to_currency(product.price, :unit => "£") %>
-            </a>
+            <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-success' %>
           </div>
         </div>
       </li>
@@ -59,9 +57,7 @@
         <tr>
           <td><%= product.name %></td>
           <td class="actions">
-            <a href="#" class="btn btn-mini btn-success">
-              <%= number_to_currency(product.price, :unit => "£") %>
-             </a>
+            <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-mini btn-success' %>
           </td>
         </tr>
       <% end %>
@@ -75,9 +71,7 @@
         <tr>
           <td><%= product.name %></td>
           <td class="actions">
-            <a href="#" class="btn btn-mini btn-success">
-              <%= number_to_currency(product.price, :unit => "£") %>
-             </a>
+            <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-mini btn-success' %>
           </td>
         </tr>
       <% end %>

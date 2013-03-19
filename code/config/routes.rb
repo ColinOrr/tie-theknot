@@ -1,5 +1,13 @@
 Myapp::Application.routes.draw do
 
+  get "basket" => "basket#show"
+
+  match "basket/add"
+
+  match "basket/remove"
+
+  resources :baskets
+
   get "merchandise" => "merchandise#index"
 
   resources :products

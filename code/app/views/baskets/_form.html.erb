@@ -1,0 +1,37 @@
+<% if @basket.errors.any? %>
+  <div class="alert alert-error">
+    <p>
+      <%= pluralize(@basket.errors.count, "error") %> prohibited this basket from being saved:
+    </p>
+    <ul>
+    <% @basket.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@basket, :html => { :class => "form-horizontal" }) do |f| %>
+  <div class="control-group">
+    <%= f.label :shopper, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :shopper, :class => 'span9' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :message, :class => 'span9' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :status, ['Open', 'Ordered', 'Paid'] %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, :class => 'btn' %>
+    <%= link_to 'Cancel', baskets_path, :class => 'btn' %>
+  </div>
+<% end %>
