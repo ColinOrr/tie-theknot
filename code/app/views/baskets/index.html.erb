@@ -9,14 +9,26 @@
 
 <table class="table">
   <tr>
+    <th>#</th>
     <th>Shopper</th>
+    <th>Items</th>
+    <th>Total Price</th>
     <th>Status</th>
     <th></th>
   </tr>
 
 <% @baskets.each do |basket| %>
   <tr>
+    <td><%= basket.id %></td>
     <td><%= basket.shopper %></td>
+    <td>
+      <ul class="unstyled">
+      <% basket.items.each do |item| %>
+        <li><%= item.product.name %></li>
+      <% end %>
+      </ul>
+    </td>
+    <td><%= number_to_currency(basket.total_price, :unit => "£") %></td>
     <td><%= basket.status %></td>
     <td class="actions">
       <%= link_to 'Edit', edit_basket_path(basket), :class => 'btn' %>

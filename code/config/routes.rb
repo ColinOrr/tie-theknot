@@ -1,7 +1,7 @@
 Myapp::Application.routes.draw do
 
   # Shopping Basket
-  get   "basket" => "basket#show"
+  get   "basket/show"
   match "basket/add"
   match "basket/remove"
   get   "basket/checkout"

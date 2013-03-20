@@ -26,7 +26,7 @@ class BasketsController < ApplicationController
 
     respond_to do |format|
       if @basket.update_attributes(params[:basket])
-        format.html { redirect_to @basket, notice: 'Basket was successfully updated.' }
+        format.html { redirect_to baskets_url, notice: 'Basket was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
