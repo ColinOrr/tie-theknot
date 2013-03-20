@@ -7,14 +7,15 @@ class Basket < ActiveRecord::Base
     items.to_a.sum(&:price)
   end
 
-  def paypal_url(return_url)
+  def paypal_url(return_url, notify_url)
     
     values = {
       :business => 'colin.orr-biz@gmail.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
-      :invoice => id
+      :invoice => id,
+      :notify => notify_url
     }
 
     items.each_with_index do |item, index|

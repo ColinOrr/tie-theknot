@@ -2,14 +2,19 @@
 class BasketController < ApplicationController
  
   layout 'administration'
+  protect_from_forgery :except => [:notify]
  
   def current_basket
-    unless(session[:basket_id])
-      basket = Basket.new
-      basket.save(:validate => false)
-      session[:basket_id] = basket.id
+    if session[:basket_id]
+      @current_basket ||= Basket.find(session[:basket_id]) 
+      session[:basket_id] = nil if @current_basket.status == 'Completed'
     end
-    @current_basket ||= Basket.find(session[:basket_id])
+    if session[:basket_id].nil?
+      @current_basket = Basket.new
+      @current_basket.save(:validate => false)
+      session[:basket_id] = @current_basket.id
+    end
+    @current_basket
   end
 
   def add
@@ -38,10 +43,22 @@ class BasketController < ApplicationController
     if @basket.update_attributes(params[:basket])
       @basket.status = 'Ordered'
       @basket.save
-      redirect_to @basket.paypal_url(merchandise_path)
+      redirect_to @basket.paypal_url(merchandise_url, basket_notify_url)
     else
       render action: "checkout"
     end
+  end
+
+  def notify
+    @basket = Basket.find(params[:invoice])
+    @basket.status = params[:payment_status]
+    @basket.items.each do |item|
+      product = item.product
+      product.quantity = product.quantity - 1 if not product.quantity.nil?
+      product.save
+    end
+    @basket.save(:validate => false)
+    render :nothing => true
   end
 
 end

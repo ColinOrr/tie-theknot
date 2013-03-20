@@ -1,11 +1,12 @@
 Myapp::Application.routes.draw do
 
   # Shopping Basket
-  get "basket" => "basket#show"
+  get   "basket" => "basket#show"
   match "basket/add"
   match "basket/remove"
-  get "basket/checkout"
-  put "basket/paypal"
+  get   "basket/checkout"
+  put   "basket/paypal"
+  post  "basket/notify"
 
   # Merchandise
   get "home/index"
