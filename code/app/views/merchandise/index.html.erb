@@ -26,7 +26,7 @@
     <!-- Activities -->
     <h2>Activities</h2>
     <ul class="thumbnails">
-    <% @products.select{|p| p.category == 'Activities'}.each do |product| %>
+    <% @products.select{|p| p.category == 'Activities'}.sort_by{|p| -p.quantity}.each do |product| %>
       <li class="span3">
         <div class="thumbnail">
           <img src="<%= product.image %>" alt="">
@@ -38,7 +38,11 @@
             <a href="#description<%= product.id %>" class="btn" data-toggle="collapse">
               Details
             </a>
-            <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-success' %>
+            <% if product.quantity > 0 %>
+              <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-success' %>
+            <% else %>
+              <span class="btn btn-danger">Sold Out</span>
+            <% end %>
           </div>
         </div>
       </li>
@@ -53,7 +57,7 @@
       <h2>Air Miles</h2>
       <img src="/air-miles.jpg" alt="Air Miles">
       <table class="table">
-      <% @products.select{|p| p.category == 'Air Miles'}.each do |product| %>
+      <% @products.select{|p| p.category == 'Air Miles'}.sort_by{|p| p.price}.each do |product| %>
         <tr>
           <td><%= product.name %></td>
           <td class="actions">
@@ -67,7 +71,7 @@
       <h2>Dining Out</h2>
       <img src="/dining-out.jpg" alt="Dining Out">
       <table class="table">
-      <% @products.select{|p| p.category == 'Dining Out'}.each do |product| %>
+      <% @products.select{|p| p.category == 'Dining Out'}.sort_by{|p| p.price}.each do |product| %>
         <tr>
           <td><%= product.name %></td>
           <td class="actions">
