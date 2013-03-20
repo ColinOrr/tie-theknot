@@ -15,7 +15,8 @@ class Basket < ActiveRecord::Base
       :upload => 1,
       :return => return_url,
       :invoice => id,
-      :notify => notify_url
+      :notify => notify_url,
+      :currency_code => 'GBP'
     }
 
     items.each_with_index do |item, index|
