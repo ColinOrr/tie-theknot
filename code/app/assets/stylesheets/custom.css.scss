@@ -96,6 +96,20 @@ footer {
   @include tilt(-2deg);
 }
 
+.shopping-basket {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.shopping-basket > img {
+  vertical-align: top;
+  max-height: 42px;
+}
+
+.shopping-basket > span {
+  display: inline-block;
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   header            { margin: 0 -20px; }
