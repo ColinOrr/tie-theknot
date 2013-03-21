@@ -41,7 +41,7 @@
             <% if product.quantity > 0 %>
               <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-success' %>
             <% else %>
-              <span class="btn btn-danger">Sold Out</span>
+              <span class="btn btn-danger">Sold</span>
             <% end %>
           </div>
         </div>

@@ -6,8 +6,10 @@ class BasketController < ApplicationController
  
   def current_basket
     if session[:basket_id]
-      @current_basket ||= Basket.find(session[:basket_id]) 
-      session[:basket_id] = nil if @current_basket.status == 'Completed'
+      @current_basket ||= Basket.find_by_id(session[:basket_id]) 
+      if @current_basket.nil? or @current_basket == 'Completed'
+        session[:basket_id] = nil
+      end
     end
     if session[:basket_id].nil?
       @current_basket = Basket.new
