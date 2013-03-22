@@ -3,6 +3,39 @@
 @import url(http://fonts.googleapis.com/css?family=BenchNine:300,400,700);
 
 /*
+ * Mix Ins */
+
+@mixin gradient($from, $to) {
+  background: $from; /* Old browsers */
+  background: -moz-linear-gradient(45deg, $from 0%, $to 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg, $from 0%,$to 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg, $from 0%,$to 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg, $from 0%,$to 100%); /* IE10+ */
+  background: linear-gradient(45deg, $from 0%,$to 100%); /* W3C */
+}
+
+@mixin overlay() {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+@mixin tilt($angle) {
+  -moz-transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  
+  -webkit-backface-visibility: hidden;
+}
+
+
+/*
  * Layout */
 
 header {
@@ -51,6 +84,32 @@ footer {
   text-align: right !important;
 }
 
+.stamp {
+  display: block;
+  position: relative;
+  top: -45px;
+  margin-bottom: -25px;
+  width: 200px;
+  text-align: center;  
+  padding: 10px;
+  border-radius: 5px;
+  @include tilt(-2deg);
+}
+
+.shopping-basket {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.shopping-basket > img {
+  vertical-align: top;
+  max-height: 42px;
+}
+
+.shopping-basket > span {
+  display: inline-block;
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   header            { margin: 0 -20px; }
@@ -62,29 +121,10 @@ footer {
  * Colours */
 
 $dark-purple: #020031;
+$mid-purple: #3F305C;
 $light-purple: #6d3353;
 $cream: #fbf1d9;
 $gray: #999;
-
-@mixin gradient($from, $to) {
-  background: $from; /* Old browsers */
-  background: -moz-linear-gradient(45deg, $from 0%, $to 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg, $from 0%,$to 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg, $from 0%,$to 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg, $from 0%,$to 100%); /* IE10+ */
-  background: linear-gradient(45deg, $from 0%,$to 100%); /* W3C */
-}
-
-@mixin overlay() {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
 
 body {
   background: $cream;
@@ -111,12 +151,31 @@ footer {
   color: $gray;
 }
 
+.stamp {
+  color: whitesmoke;
+  background-color: $mid-purple;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 5px 30px #888;
+}
+
 /*
  * Typography */
 
- h1 {
-  font-size: 26px;
- }
+h1, h2, h3 {
+  font-family: 'BenchNine', sans-serif; 
+}
+
+h1 {
+  font-size: 30pt;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  line-height: 1em;
+}
 
 .actor {
   font-family: 'BenchNine', sans-serif; 
@@ -147,4 +206,10 @@ footer {
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .actor { font-size: 20pt; }
+}
+
+/*
+ * Utilities */
+.text-right {
+  text-align: right !important;
 }

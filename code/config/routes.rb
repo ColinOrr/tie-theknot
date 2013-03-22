@@ -1,7 +1,20 @@
 Myapp::Application.routes.draw do
-  resources :products
 
+  # Shopping Basket
+  get   "basket/show"
+  match "basket/add"
+  match "basket/remove"
+  get   "basket/checkout"
+  put   "basket/paypal"
+  post  "basket/notify"
+
+  # Merchandise
   get "home/index"
+  get "merchandise" => "merchandise#index"
+
+  # Administration
+  resources :baskets
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

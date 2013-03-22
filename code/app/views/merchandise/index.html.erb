@@ -1,0 +1,95 @@
+<h1 class="stamp">Merchandise</h1>
+<% if @basket_size %>
+  <a href="<%= basket_show_path %>" class="shopping-basket btn pull-right">
+    <img src="http://png-4.findicons.com/files/icons/2258/addictive_flavour/48/shopping_basket.png" alt="" />
+    <span>
+      Shopping Basket<br />
+      <span class="label label-info"><%= @basket_size %> items</span>
+    </span>
+  </a>
+<% end %>
+<div class="row">
+  <div class="span9">
+
+    <!-- Introduction -->
+    <p class="lead">the trip of a lifetime...</p>
+    <p>
+      ...if you know us well, then you'll know that we would rather spend money on travel than stuff 
+      for the house, as we already have everything we need. 
+    </p>
+    <p>
+      If you are thinking of getting us a gift, we'd much prefer you help us make our honeymoon a trip 
+      of a lifetime.  We're planning a trip to Australia with a couple of stops in Asia on the way.  This
+      section of the site has a gift list of activities, air miles and dining out vouchers that you can 
+      buy for us online.
+    </p>
+    <p>
+      The main thing is that you come along on our special day to celebrate with us.  We look forward to
+      seeing you!
+    </p>
+    <p class="text-right">
+      <br />
+      Colin and Natalie
+    </p>
+
+    <!-- Activities -->
+    <h2>Activities</h2>
+    <ul class="thumbnails">
+    <% @products.select{|p| p.category == 'Activities'}.sort_by{|p| -p.quantity}.each do |product| %>
+      <li class="span3">
+        <div class="thumbnail">
+          <img src="<%= product.image %>" alt="">
+          <h3><%= product.name %></h3>
+          <p id="description<%= product.id %>" class="collapse">
+            <%= product.description %>
+          </p>
+          <div class="actions">
+            <a href="#description<%= product.id %>" class="btn" data-toggle="collapse">
+              Details
+            </a>
+            <% if product.quantity > 0 %>
+              <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-success' %>
+            <% else %>
+              <span class="btn btn-danger">Sold</span>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+
+  </div>
+  <div class="span3">
+    <div class="well">
+
+      <!-- Air Miles -->
+      <h2>Air Miles</h2>
+      <img src="/air-miles.jpg" alt="Air Miles">
+      <table class="table">
+      <% @products.select{|p| p.category == 'Air Miles'}.sort_by{|p| p.price}.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td class="actions">
+            <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-mini btn-success' %>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+
+      <!-- Dining Out -->
+      <h2>Dining Out</h2>
+      <img src="/dining-out.jpg" alt="Dining Out">
+      <table class="table">
+      <% @products.select{|p| p.category == 'Dining Out'}.sort_by{|p| p.price}.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td class="actions">
+            <%= link_to number_to_currency(product.price, :unit => "£"), basket_add_path(:product_id => product), :method => :post, :class => 'btn btn-mini btn-success' %>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
