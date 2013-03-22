@@ -3,6 +3,13 @@
 <head>
   <title>Tie the Knot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script type="text/javascript">
+    // Secret Configuration
+    var domain = "<%= SECRET['domain'] %>"
+    var analytics_id = "<%= SECRET['analytics_id'] %>"
+  </script>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,5 +18,4 @@
 
 <%= content_for?(:content) ? yield(:content) : yield %>
 
-</body>
 </html>
