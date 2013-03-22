@@ -1,6 +1,7 @@
 
 class ProductsController < ApplicationController
 
+  http_basic_authenticate_with :name => SECRET['username'], :password => SECRET['password']  
   layout 'administration'
 
   # GET /products

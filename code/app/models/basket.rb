@@ -10,7 +10,7 @@ class Basket < ActiveRecord::Base
   def paypal_url(return_url, notify_url)
     
     values = {
-      :business => 'colin.orr-biz@gmail.com',
+      :business => SECRET["paypal_account"],
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
