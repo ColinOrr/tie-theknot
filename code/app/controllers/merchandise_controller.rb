@@ -4,10 +4,11 @@ class MerchandiseController < ApplicationController
   layout 'administration'
 
   def count_basket_items
-    if Basket.exists?(session[:basket_id])
-      return Basket.find(session[:basket_id]).items.count
+    basket = Basket.find_by_id(session[:basket_id])
+    if basket.nil? or basket.status == 'Completed'
+      return nil
     end
-    return nil
+    return basket.items.count
   end
 
   # GET /products
