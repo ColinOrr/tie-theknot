@@ -54,10 +54,12 @@ class BasketController < ApplicationController
   def notify
     @basket = Basket.find(params[:invoice])
     @basket.status = params[:payment_status]
-    @basket.items.each do |item|
-      product = item.product
-      product.quantity = product.quantity - 1 if not product.quantity.nil?
-      product.save
+    if @basket.status == 'Completed'
+      @basket.items.each do |item|
+        product = item.product
+        product.quantity = product.quantity - 1 if not product.quantity.nil?
+        product.save
+      end
     end
     @basket.save(:validate => false)
     render :nothing => true
