@@ -44,6 +44,9 @@
             <%= product.description %>
           </p>
           <div class="actions">
+            <% if product.quantity > 0 %>
+              <span class="label label-info"><%= product.label %></span>
+            <% end %>
             <a href="#description<%= product.id %>" class="btn" data-toggle="collapse">
               Details
             </a>
