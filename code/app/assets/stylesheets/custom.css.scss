@@ -80,6 +80,14 @@ footer {
   height: 106px;  
 }
 
+.home-page .row {
+  margin-top: 50px;
+}
+
+.home-page .well img {
+  margin-right: 5px;
+}
+
 .actions {
   text-align: right !important;
 }
@@ -158,6 +166,15 @@ footer {
   box-shadow: 0 5px 30px #888;
 }
 
+.home-page .well {
+  background: none;
+  box-shadow: 0 0 40px rgb(255, 240, 240);
+}
+
+.home-page h1 {
+  color: $light-purple;
+}
+
 /*
  * Typography */
 
@@ -167,6 +184,11 @@ h1, h2, h3 {
 
 h1 {
   font-size: 30pt;
+}
+
+.home-page h1 {
+  font-size: 26pt;
+  margin-bottom: 5px;
 }
 
 h2 {
