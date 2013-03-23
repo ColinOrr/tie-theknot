@@ -34,7 +34,7 @@
     </p>
 
     <!-- Activities -->
-    <h2 id="#activities">Activities</h2>
+    <h2 id="activities">Activities</h2>
     <ul class="thumbnails">
     <% @products.select{|p| p.category == 'Activities'}.each do |product| %>
       <li class="span3">
@@ -67,7 +67,7 @@
     <div class="well">
 
       <!-- Air Miles -->
-      <h2 id="#air-miles">Air Miles</h2>
+      <h2 id="air-miles">Air Miles</h2>
       <img src="/air-miles.jpg" alt="Air Miles">
       <table class="table">
       <% @products.select{|p| p.category == 'Air Miles'}.each do |product| %>
@@ -81,7 +81,7 @@
       </table>
 
       <!-- Dining Out -->
-      <h2 id="#dining-out">Dining Out</h2>
+      <h2 id="dining-out">Dining Out</h2>
       <img src="/dining-out.jpg" alt="Dining Out">
       <table class="table">
       <% @products.select{|p| p.category == 'Dining Out'}.each do |product| %>
