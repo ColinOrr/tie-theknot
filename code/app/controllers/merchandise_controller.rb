@@ -14,7 +14,7 @@ class MerchandiseController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.order(:priority).reverse_order
+    @products = Product.order('category, priority desc, price')
     @basket_size = count_basket_items
 
     respond_to do |format|
