@@ -28,7 +28,7 @@ class Basket < ActiveRecord::Base
       })
     end
     
-    "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+    "https://www.paypal.com/cgi-bin/webscr?" + values.to_query
   end
   
 end
