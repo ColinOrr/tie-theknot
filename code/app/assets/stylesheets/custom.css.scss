@@ -80,12 +80,20 @@ footer {
   height: 106px;  
 }
 
-.home-page .row {
-  margin-top: 50px;
+.home-page nav {
+  margin: 30px -20px 0 -20px;
+}
+
+.home-page .well {
+  display: inline-block; 
+  width: 300px; 
+  text-align: left;
 }
 
 .home-page .well img {
   margin-right: 5px;
+  margin-bottom: 5px;
+  width: 100px;
 }
 
 .actions {
@@ -210,6 +218,7 @@ h3 {
   font-family: 'BenchNine', sans-serif; 
   font-weight: 700; 
   font-size: 30pt;
+  line-height: 30pt;
   text-transform: uppercase;
 }
 
