@@ -15,7 +15,6 @@ class Basket < ActiveRecord::Base
       :upload => 1,
       :return => return_url,
       :invoice => id,
-      :notify => notify_url,
       :currency_code => 'GBP'
     }
 
@@ -28,7 +27,7 @@ class Basket < ActiveRecord::Base
       })
     end
     
-    "https://www.paypal.com/cgi-bin/webscr?" + values.to_query
+    "https://www.paypal.com/uk/cgi-bin/webscr?" + values.to_query
   end
   
 end

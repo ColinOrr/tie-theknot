@@ -27,6 +27,14 @@
       </div>
     </div>
   </div>
+
+<% if @basket.total_price > 187 %>
+  <div class="alert alert-info">
+    You will be directed to PayPal to make the payment.  Some people have had issues with PayPal when using their credit card for orders over £187.
+    <b>If you have any issues</b> with payment, please <b>contact <%= SECRET['contact'] %></b> and he will take your payment manually.
+  </div>
+<% end %>
+
   <div class="actions">
     <%= link_to 'Back', basket_show_path, :class => 'btn' %>
     <%= f.submit 'Payment', :class => 'btn btn-success' %>
