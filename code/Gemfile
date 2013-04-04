@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.5'
 gem 'mysql2'
@@ -39,5 +39,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'therubyracer'
+gem 'thin'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'modernizr-rails'
